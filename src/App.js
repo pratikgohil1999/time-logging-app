@@ -1,12 +1,15 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <Card className='App' style={{ width: '20rem' }}>
         <TimersDashboard />
-      </div>
+      </Card>
     );
   }
 }
@@ -17,7 +20,7 @@ class TimersDashboard extends React.Component {
       <div>
         <div>
           <EditableTimerList />
-          <ToggleableTimerForm isOpen={false} />
+          <ToggleableTimerForm isOpen={true} />
         </div>
       </div>
     );
@@ -27,21 +30,23 @@ class TimersDashboard extends React.Component {
 class EditableTimerList extends React.Component {
   render() {
     return (
-      <div>
-        <EditableTimer
-          title='Learn React'
-          project='Web Domination'
-          elasped='8986300'
-          runningSince={null}
-          editFormOpen={false}
-        />
-        <EditableTimer
-          title='Learn extreme ironing'
-          project='World Domination'
-          elapsed='3890985'
-          runningSince={null}
-          editFormOpen={true}
-        />
+      <div className='EditableTimerList'>
+        <div>
+          <EditableTimer
+            title='Learn React'
+            project='Web Domination'
+            elasped='8986300'
+            runningSince={null}
+            editFormOpen={false}
+          />
+          <EditableTimer
+            title='Learn extreme ironing'
+            project='World Domination'
+            elapsed='3890985'
+            runningSince={null}
+            editFormOpen={true}
+          />
+        </div>
       </div>
     );
   }
@@ -51,20 +56,23 @@ class EditableTimer extends React.Component {
   render() {
     if (this.props.editFormOpen) {
       return (
-        <TimerForm
-          title={this.props.title}
-          project={this.props.project}
-        />
+        <Card>
+          <TimerForm
+            title={this.props.title}
+            project={this.props.project}
+          />
+        </Card>
       );
     } else {
       return (
-        <Timer
-          title={this.props.title}
-          project={this.props.project}
-          elasped={this.props.elasped}
-          runningSince={this.props.runningSince}
-        />
-
+        <Card>
+          <Timer
+            title={this.props.title}
+            project={this.props.project}
+            elasped={this.props.elasped}
+            runningSince={this.props.runningSince}
+          />
+        </Card>
       );
     }
   }
@@ -76,7 +84,7 @@ class TimerForm extends React.Component {
     return (
       <div>
         <div>
-          <div>
+          <Card>
             <div>
               <label>Title</label>
               <input type='text' defaultValue={this.props.title} />
@@ -93,7 +101,7 @@ class TimerForm extends React.Component {
                 Cancel
               </button>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     );
@@ -103,7 +111,7 @@ class TimerForm extends React.Component {
 class Timer extends React.Component {
   render() {
     //const elapsedString = helpers.renderElapsedString(this.props.elapsed);
-    const elapsedString = '15:2:3';
+    const elapsedString = '15:20:03';
     return (
       <div>
         <div>
@@ -145,7 +153,7 @@ class ToggleableTimerForm extends React.Component {
     } else {
       return (
         <div>
-          <button>close</button>
+          <button>Add</button>
         </div>
       );
     }
