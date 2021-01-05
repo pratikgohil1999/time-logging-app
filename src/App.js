@@ -369,14 +369,14 @@ class Timer extends React.Component {
           <div>
             <Container>
               <Row>
-                <Col sm={6} style={{ textAlign: 'right' }}>
+                <Col style={{ textAlign: 'right' }}>
                   <EditIcon
                     onClick={this.props.onEditClick}
                   >
                     Edit
                     </EditIcon>
                 </Col>
-                <Col sm={6} style={{ textAlign: 'left' }}>
+                <Col style={{ textAlign: 'left' }}>
                   <DeleteIcon
                     onClick={this.handleTrashClick}
                   >
