@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# This is Simple Time Tracking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+install dependencies:
+
+### `npm install`
 
 ## Available Scripts
 
